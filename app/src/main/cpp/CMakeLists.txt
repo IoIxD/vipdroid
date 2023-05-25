@@ -19,6 +19,8 @@ if (VIPS_FOUND)
     message (STATUS "VIPS_LIBRARY_DIRS=${VIPS_LIBRARY_DIRS}")
     include_directories(${VIPS_INCLUDE_DIRS})
     link_directories(${VIPS_LIBRARY_DIRS})
+
+    target_link_libraries(vipdroid vips)
 else()
     message (FATAL_ERROR "libvips not found")
 endif()
