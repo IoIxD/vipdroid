@@ -1,0 +1,3 @@
+[submodule "libvips_android_scripts/libs/libvips"]
+	path = libvips_android_scripts/libs/libvips
+	url = https://github.com/IoIxD/libvips
