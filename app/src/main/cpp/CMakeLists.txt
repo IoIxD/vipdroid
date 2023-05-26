@@ -5,8 +5,7 @@
 cmake_minimum_required(VERSION 3.22.1)
 project("vipdroid")
 
-add_library(vipdroid SHARED src/*.h)
-add_library(vipdroid SHARED src/*.cpp)
+add_subdirectory(src)
 
 find_package(PkgConfig REQUIRED)
 
