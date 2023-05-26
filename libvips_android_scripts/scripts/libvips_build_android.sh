@@ -8,6 +8,7 @@ INSTALL_DIR="$(pwd)/../build"
 
 cd "../libs/libvips"
 
+
 function build_for_arch() {
 	fake_sysroot=${INSTALL_DIR}/${1}/install
 	if ! test -e "${fake_sysroot}/usr/local/lib/libvips.so"; then

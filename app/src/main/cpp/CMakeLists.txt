@@ -5,7 +5,8 @@
 cmake_minimum_required(VERSION 3.22.1)
 project("vipdroid")
 
-add_library(vipdroid SHARED vipdroid.cpp)
+add_library(vipdroid SHARED src/*.h)
+add_library(vipdroid SHARED src/*.cpp)
 
 find_package(PkgConfig REQUIRED)
 
@@ -13,20 +14,17 @@ find_library(log-lib log)                # Search for the NDK library
 
 pkg_search_module(VIPS REQUIRED vips-cpp)   # libvips
 
-if (VIPS_FOUND)
-    message (STATUS "VIPS_INCLUDE_DIRS=${VIPS_INCLUDE_DIRS}")
-    message (STATUS "VIPS_LIBRARIES=${VIPS_LIBRARIES}")
-    message (STATUS "VIPS_LIBRARY_DIRS=${VIPS_LIBRARY_DIRS}")
-    include_directories(${VIPS_INCLUDE_DIRS})
-    link_directories(${VIPS_LIBRARY_DIRS})
+include_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/include/")
+include_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/include/glib-2.0/")
+include_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/include/gio-unix-2.0/")
+include_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/include/libexif")
+include_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/include/libheif")
+include_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/include/libpng16")
+include_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/include/webp")
+include_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/lib/glib-2.0/include/")
 
-    target_link_libraries(vipdroid vips)
-else()
-    message (FATAL_ERROR "libvips not found")
-endif()
-
-
-
+link_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/lib/")
+link_directories("../../../../libvips_android_scripts/build/armv7a-linux-androideabi/install/usr/local/lib/glib-2.0/")
 target_link_libraries( # Specifies the target library.
                        vipdroid
 

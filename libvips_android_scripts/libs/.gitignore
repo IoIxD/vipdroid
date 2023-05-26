@@ -10,12 +10,22 @@ libexpat
 # tar xf expat-2.2.7.tar.gz
 # rm expat-2.2.7.tar.gz
 # mv expat-2.2.7 libexpat
+libvips
+# wget https://github.com/libvips/libvips/releases/download/v8.11.0/vips-8.11.0.tar.gz
+# tar xf vips-8.11.0.tar.gz
+# rm vips-8.11.0.tar.gz
+# mv vips-8.11.0 libvips
 glib
 # ./glib_fetch.sh
 libexif
 # git clone https://github.com/libexif/libexif
 gettext-tiny
 # git clone https://github.com/sabotage-linux/gettext-tiny.git
+libde265
+# wget https://github.com/strukturag/libde265/releases/download/v1.0.8/libde265-1.0.8.tar.gz
+# tar xf libde265-1.0.8.tar.gz
+# rm libde265-1.0.8.tar.gz
+# mv libde265-1.0.8 libde265
 libheif
 # wget https://github.com/strukturag/libheif/releases/download/v1.12.0/libheif-1.12.0.tar.gz
 # tar xf libheif-1.12.0.tar.gz
